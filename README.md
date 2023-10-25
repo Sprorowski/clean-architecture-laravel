@@ -1,66 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Clean Architecture Project Template
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This is a Laravel project template that follows the principles of Clean Architecture, designed to help you build robust and maintainable applications. Clean Architecture promotes a clear separation of concerns, making your codebase more organized, testable, and adaptable. This README will guide you through the project structure, tools, and commands used in this template.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Structure
+The project is structured into four main directories, each representing a specific layer of the Clean Architecture:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. **app/Application**: This layer contains application-specific code and use cases. It defines the application's high-level business rules and logic.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **app/Domain**: The domain layer represents the core business logic of your application. It contains entities, value objects, and the repository interfaces that define how data is stored and retrieved.
 
-## Learning Laravel
+3. **app/Infrastructure**: The infrastructure layer handles the implementation details, including database connections, third-party integrations, and other external dependencies. This layer should be kept as thin as possible.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4. **app/Presenter**: The presenter layer is responsible for presenting data to the user, which can include views, controllers, and UI-specific logic.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Prerequisites
+Before using this project template, ensure you have the following prerequisites installed:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [PHP >= 8.1](https://www.php.net/downloads.php)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Makefile Commands
+This project template provides several Makefile commands to simplify common tasks:
 
-### Premium Partners
+- `make up`: Launch the application using Laravel Sail.
+- `make down`: Stop the application and associated services.
+- `make ssh`: Access the Laravel container via SSH.
+- `make optimize`: Optimize the application for production.
+- `make refresh`: Refresh the application's database with fresh migrations and seed data.
+- `make test`: Run PHPUnit tests within the Laravel container.
+- `make phpcs`: Run PHP CodeSniffer for code linting and coding standard checks.
+- `make phpcbf`: Run PHP Code Beautifier and Fixer for automated code fixes.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Make sure you replace `make` with `./vendor/bin/sail` if you prefer running these commands directly through Laravel Sail.
 
-## Contributing
+## Getting Started
+To get started with this project template, follow these steps:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clone the project to your local machine.
+2. Navigate to the project directory.
+3. Run `make up` to start the application.
+4. Access the application via your web browser at [http://localhost](http://localhost).
+5. You can start building your application within the Clean Architecture structure.
 
-## Code of Conduct
+## Additional Information
+- You can customize the PHP CodeSniffer rules by editing the `phpcs.xml` file.
+- Adjust the project structure and add your own code within the Clean Architecture layers as needed.
+- Refer to Laravel and Clean Architecture documentation for more details on Laravel and Clean Architecture principles.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Cleanup
+Remember to run `make down` when you're done working on the project to stop the application and associated services.
+ 
+This repository follows the conventional commits guid lines
+https://www.conventionalcommits.org/en/v1.0.0/
 
 ## License
+This project template is open-source and available under the [MIT License](LICENSE). Feel free to use it for your own projects and make any modifications as necessary.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
