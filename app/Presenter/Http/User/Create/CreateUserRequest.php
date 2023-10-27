@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Presenter\Http\User\Create;
 
 use App\Application\User\Create\CreateUserCommand;
