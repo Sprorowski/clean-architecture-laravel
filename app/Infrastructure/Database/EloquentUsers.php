@@ -33,6 +33,6 @@ class EloquentUsers implements Users
 
     public function create(User $user): void
     {
-        $this->model->save($user->toArray());
+        $this->model->create($user->toArray());
     }
 }

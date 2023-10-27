@@ -12,6 +12,7 @@ class User
         public readonly string $id,
         public readonly string $name,
         public readonly string $email,
+        public readonly string $password,
         public readonly DateTimeImmutable $createdAt,
     ) {
     }
@@ -20,8 +21,9 @@ class User
     {
         return new self(
             id: '',
-            name: '',
-            email: '',
+            name: $name,
+            email: 'aa@aa.com',
+            password: '123',
             createdAt: new DateTimeImmutable('2023-09-09 00:15:00'),
         );
     }
@@ -29,7 +31,9 @@ class User
     public function toArray(): array
     {
         return [
-            'name' => $this->name
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
         ];
     }
 
@@ -40,6 +44,7 @@ class User
             id: $data['id'],
             name: $data['name'],
             email: $data['email'],
+            password: $data['password'],
             createdAt: $data['createdAt'],
         );
     }

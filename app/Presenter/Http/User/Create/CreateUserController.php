@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Presenter\Http\User;
+namespace App\Presenter\Http\User\Create;
 
 use App\Application\User\Create\CreateUserCommand;
 use App\Application\User\Create\CreateUserCommandHandler;
@@ -15,10 +15,10 @@ class CreateUserController
     ) {
     }
 
-    public function __invoke(): Response
-    {
+    public function __invoke(CreateUserRequest $request): Response
+    {   
+        dd($request->toCommand());
         $this->createHandler->handle(new CreateUserCommand("Name"));
-
-        return new Response("aaaaa", Response::HTTP_CREATED);
+        return new Response(null, Response::HTTP_CREATED);
     }
 }

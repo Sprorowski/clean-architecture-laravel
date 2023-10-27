@@ -8,5 +8,5 @@ interface Users
 {
     public function get(string $id): User;
 
-    public function create(User $payment): void;
+    public function create(User $user): void;
 }

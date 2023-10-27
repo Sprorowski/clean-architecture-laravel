@@ -17,8 +17,6 @@ class CreateUserCommandHandler
     public function handle(CreateUserCommand $command): void
     {
         $user = User::create($command->name);
-
-        dd($user);
         $this->users->create($user);
     }
 }

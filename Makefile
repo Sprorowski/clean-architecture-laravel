@@ -1,5 +1,5 @@
 up:
-	./vendor/bin/sail up --build
+	./vendor/bin/sail up -d
 down:
 	./vendor/bin/sail down
 
@@ -8,9 +8,11 @@ ssh:
 
 optimize:
 	docker-compose exec laravel.test php artisan optimize
+	docker-compose exec laravel.test php artisan config:cache
+	docker-compose exec laravel.test php artisan  config:clear
 
 refresh:
-	docker-compose exec laravel.test php artisan migrate:fresh --seed
+	docker-compose exec laravel.test php artisan migrate
 
 test:
 	docker-compose exec laravel.test php artisan test
