@@ -9,7 +9,7 @@ use DateTimeImmutable;
 class User
 {
     public function __construct(
-        public readonly string $id,
+        public readonly ?int $id,
         public readonly string $name,
         public readonly string $email,
         public readonly string $password,
@@ -17,13 +17,13 @@ class User
     ) {
     }
 
-    public static function create(string $name): self
+    public static function create(?int $id, string $name, string $email, $password): self
     {
         return new self(
-            id: '',
+            id: $id,
             name: $name,
-            email: 'aa@aa.com',
-            password: '123',
+            email: $email,
+            password: $password,
             createdAt: new DateTimeImmutable('2023-09-09 00:15:00'),
         );
     }

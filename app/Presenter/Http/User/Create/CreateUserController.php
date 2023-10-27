@@ -18,7 +18,6 @@ class CreateUserController
     {
         $this->createHandler->handle($request->toCommand());
 
-        
         return new Response(null, Response::HTTP_CREATED);
     }
 }
