@@ -3,8 +3,11 @@
 declare(strict_types=1);
 
 use App\Presenter\Http\User\Create\CreateUserController;
+use App\Presenter\Http\User\Login\LoginUserController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('/user')->group(function () {
+Route::middleware('auth:sanctum')->prefix('/user')->group(function () {
     Route::post('', CreateUserController::class);
 });
+
+Route::post('/user/login', LoginUserController::class);

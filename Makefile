@@ -8,6 +8,7 @@ ssh:
 
 optimize:
 	docker-compose exec laravel.test php artisan optimize
+	docker-compose exec laravel.test php artisan route:clear
 	docker-compose exec laravel.test php artisan config:cache
 	docker-compose exec laravel.test php artisan  config:clear
 

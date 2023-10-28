@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application;
 
-class Command
+abstract class Command
 {
     public function getProperties(): array
     {
