@@ -44,7 +44,6 @@
 
 
     <exclude-pattern>vendor/*</exclude-pattern>
-    <file>app/</file>
-    <file>tests/</file>
+    <file>.</file>
 
 </ruleset>

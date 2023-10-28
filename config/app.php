@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -7,24 +9,24 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
-    'env' => env('APP_ENV', 'production'), 
+    'env' => env('APP_ENV', 'production'),
 
-    'debug' => (bool) env('APP_DEBUG', false),   
+    'debug' => (bool) env('APP_DEBUG', false),
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL'),   
+    'asset_url' => env('ASSET_URL'),
 
-    'timezone' => 'UTC',   
+    'timezone' => 'UTC',
 
     'locale' => 'en',
 
-    'fallback_locale' => 'en',    
+    'fallback_locale' => 'en',
 
     'faker_locale' => 'en_US',
 
     'key' => env('APP_KEY'),
-    
+
     'cipher' => 'AES-256-CBC',
 
     'maintenance' => [
@@ -38,7 +40,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Presenter\Providers\EventServiceProvider::class,
         App\Presenter\Providers\RouteServiceProvider::class,
-    ])->toArray(),  
+    ])->toArray(),
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
