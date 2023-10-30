@@ -16,11 +16,16 @@
         <include>
             <directory>app</directory>
         </include>
+        <exclude>     
+            <directory suffix="Kernel.php">./app/Presenter</directory>
+            <directory>app/Presenter/Providers</directory>
+            <file>app/Presenter/Http/Middleware/Authenticate.php</file>
+        </exclude>
     </source>
     <coverage>
         <report>
             <html outputDirectory="html-coverage" lowUpperBound="80" highLowerBound="90"/>
-        </report>
+        </report>        
     </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>

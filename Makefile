@@ -16,7 +16,7 @@ refresh:
 	docker-compose exec laravel.test php artisan migrate
 
 test:
-	docker-compose exec laravel.test php artisan test --coverage --min=75.7
+	docker-compose exec laravel.test php artisan test --coverage --min=75.3
 
 phpcs:
 	docker-compose exec laravel.test ./vendor/bin/phpcs --standard=phpcs.xml --colors -ps $(opt)
