@@ -11,8 +11,8 @@ use Illuminate\Validation\UnauthorizedException;
 
 class LoginUserCommandHandler implements CommandHandler
 {
-    public function __construct(
-    ) {
+    public function __construct()
+    {
     }
 
     public function handle(Command $command): void

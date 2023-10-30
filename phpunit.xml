@@ -17,10 +17,7 @@
             <directory>app</directory>
         </include>
     </source>
-    <coverage processUncoveredFiles="false">
-        <include>
-            <directory suffix=".php">./app</directory>
-        </include>
+    <coverage>
         <report>
             <html outputDirectory="html-coverage" lowUpperBound="80" highLowerBound="90"/>
         </report>

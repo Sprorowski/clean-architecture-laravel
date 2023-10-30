@@ -1,6 +1,5 @@
 <?php
 
-
 declare(strict_types=1);
 
 namespace Tests\Unit\Infrastructure\Database;
@@ -57,7 +56,7 @@ class EloquentUsersTest extends TestsTestCase
                 'name' => '',
                 'email' => '',
                 'password' => '',
-                'createdAt' => new DateTimeImmutable('2023-09-09 00:15:00')  
+                'createdAt' => new DateTimeImmutable('2023-09-09 00:15:00')
             ]));
 
         $this->repository->get(1);

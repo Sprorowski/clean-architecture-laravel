@@ -16,7 +16,7 @@ class LoginUserController
     ) {
     }
 
-    public function __invoke(LoginUserRequest $request): JsonResponse
+    public function __invoke(LoginUserRequest $request): JsonResponse | Response
     {
         try {
             $this->loginUserCommandHandler->handle($request->toCommand());
