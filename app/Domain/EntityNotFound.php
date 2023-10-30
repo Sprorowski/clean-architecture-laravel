@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-use Exception;
-
-class EntityNotFound extends Exception
+class EntityNotFound extends DomainException
 {
     /**
      * @param array<string, string|int|float|bool|null> $details

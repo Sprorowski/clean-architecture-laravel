@@ -6,7 +6,7 @@ namespace App\Domain\User;
 
 interface Users
 {
-    public function get(string $id): User;
+    public function get(int $id): User;
 
     public function create(User $user): void;
 }

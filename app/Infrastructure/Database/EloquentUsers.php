@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Infrastructure\Database;
 
 use App\Domain\User\User;
+use App\Domain\User\UserNotFound;
 use App\Domain\User\Users;
 use App\Infrastructure\Database\Models\UserModel;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Payment\Domain\Payment\UserNotFound;
 
 class EloquentUsers implements Users
 {
@@ -20,7 +20,7 @@ class EloquentUsers implements Users
     /**
      * @throws UserNotFound
      */
-    public function get(string $id): User
+    public function get(int $id): User
     {
         try {
             $user = $this->model->where($id)->firstOrFail();

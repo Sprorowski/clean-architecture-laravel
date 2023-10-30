@@ -18,9 +18,11 @@ class UserModel extends Authenticatable
     protected $table = 'users';
 
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
+        'created_at'
     ];
 
     protected $hidden = [

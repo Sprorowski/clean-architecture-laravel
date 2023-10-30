@@ -12,7 +12,6 @@ use Illuminate\Validation\UnauthorizedException;
 class LoginUserCommandHandler implements CommandHandler
 {
     public function __construct(
-        private readonly Auth $auth
     ) {
     }
 

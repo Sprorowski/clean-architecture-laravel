@@ -16,22 +16,22 @@ class CreateUserCommandHandlerTest extends TestCase
 {
     private CreateUserCommandHandler $commandHandler;
 
-    private Users&MockObject $payments;
+    private Users&MockObject $users;
 
     public function setUp(): void
     {
-        $this->payments = $this->createMock(Users::class);
-        $this->commandHandler = new CreateUserCommandHandler($this->payments);
+        $this->users = $this->createMock(Users::class);
+        $this->commandHandler = new CreateUserCommandHandler($this->users);
     }
 
-    public function testCreatePaymentCommandHandler(): void
+    public function testCreateUserCommandHandler(): void
     {
         $command = new CreateUserCommand(
             name: '',
             email: '',
             password: '',
         );
-        $this->payments
+        $this->users
             ->expects($this->once())
             ->method('create')
             ->with(

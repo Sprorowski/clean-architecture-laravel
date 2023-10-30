@@ -12,8 +12,8 @@ class User
         public readonly ?int $id,
         public readonly string $name,
         public readonly string $email,
-        public readonly string $password,
-        public readonly DateTimeImmutable $createdAt,
+        public readonly ?string $password,
+        public readonly ?DateTimeImmutable $createdAt,
     ) {
     }
 
@@ -44,8 +44,8 @@ class User
             id: $data['id'],
             name: $data['name'],
             email: $data['email'],
-            password: $data['password'],
-            createdAt: $data['createdAt'],
+            password: null,
+            createdAt:null,
         );
     }
 }
