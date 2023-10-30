@@ -23,7 +23,7 @@ class EloquentUsers implements Users
     public function get(int $id): User
     {
         try {
-            $user = $this->model->where($id)->firstOrFail();
+            $user = $this->model->findOrFail($id);
         } catch (ModelNotFoundException) {
             throw new UserNotFound($id);
         }

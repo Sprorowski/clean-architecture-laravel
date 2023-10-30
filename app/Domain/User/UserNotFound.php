@@ -10,6 +10,6 @@ class UserNotFound extends EntityNotFound
 {
     public function __construct(int $id)
     {
-        parent::__construct('user', ['id' => $id]);
+        parent::__construct('User', ['id' => $id]);
     }
 }

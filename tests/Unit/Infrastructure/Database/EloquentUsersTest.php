@@ -49,7 +49,7 @@ class EloquentUsersTest extends TestsTestCase
     public function testGivenUserEntityItShouldBeReturnByTheModel(): void
     {
         $this->model
-            ->shouldReceive('where->firstOrFail')
+            ->shouldReceive('findOrFail')
             ->once()
             ->andReturn(new UserModel([
                 'id' => 1,
@@ -65,7 +65,7 @@ class EloquentUsersTest extends TestsTestCase
     public function testGivenWrongUserEntityItShouldReturnAnExceptionByTheModel(): void
     {
         $this->model
-            ->shouldReceive('where->firstOrFail')
+            ->shouldReceive('findOrFail')
             ->once()
             ->andThrow(ModelNotFoundException::class);
 
